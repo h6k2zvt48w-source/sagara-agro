@@ -36,6 +36,20 @@ nav a:hover{color:var(--g)}
 .actions{display:flex;gap:12px;margin-top:22px}
 .ghost{background:#ffffff20;border:1px solid #ffffff88}
 .photo-note{display:none}
+.about-photo,.panelvisual,.tile{position:relative;overflow:hidden}
+.about-photo{min-height:300px;border-radius:16px;background:linear-gradient(135deg,#234e2b,#a9c77a)}
+.about-photo img,.panelvisual img,.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panelvisual{min-height:210px;padding:0}
+.tile{min-height:180px;padding:0;background:linear-gradient(135deg,#315b30,#a5c66d)}
+.tile img{display:block}
+.benefits span{display:block;height:34px;margin-bottom:7px}
+.benefits span img{width:30px;height:30px;object-fit:contain}
+.articleicon{width:98px;height:98px;min-width:98px;padding:0;display:grid;place-items:center;overflow:hidden}
+.articleicon img{width:100%;height:100%;object-fit:contain}
+.wa img{width:26px;height:26px;object-fit:contain;filter:brightness(0) invert(1)}
+.visual img,.detail-visual img{z-index:0}
+.visual small,.detail-visual small{z-index:1}
+
 
 
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 10px;background:white;border-radius:15px;box-shadow:0 10px 30px #0001;margin-top:-28px;position:relative}
@@ -146,7 +160,7 @@ nav.open{display:flex}
 .about{grid-template-columns:1fr;padding:40px 5%;gap:22px}
 .panel{grid-template-columns:1fr}
 .gallery{gap:8px}
-.tile{min-height:100px;font-size:9px}
+.tile{min-height:115px;font-size:9px}.about-photo{min-height:230px}.panelvisual{min-height:190px}
 .head{display:block}
 .cta{flex-direction:column;align-items:flex-start;padding:25px}
 .cta h2{font-size:22px}
@@ -177,7 +191,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <a href="#artikel">Artikel</a>
 <a href="#tentang">Tentang</a>
 </nav>
-<a class="btn headerbtn" href="https://wa.me/62816303131">☏ Hubungi Kami</a>
+<a class="btn headerbtn" href="https://wa.me/6281328119994">☏ Hubungi Kami</a>
 </header>
 
 <main>
@@ -189,7 +203,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <h2>Berkualitas dan Bergaransi</h2>
 <p>Solusi bibit buah unggul untuk kebun impian Anda. Konsultasikan varietas, ukuran bibit, dan pengiriman bersama tim Sagara Agro.</p>
 <div class="actions">
-<a class="btn" href="https://wa.me/62816303131">☏ Konsultasi Sekarang</a>
+<a class="btn" href="https://wa.me/6281328119994">☏ Konsultasi Sekarang</a>
 <a class="btn ghost" href="#produk">Lihat Produk →</a>
 </div>
 </div>
@@ -198,10 +212,10 @@ SAGARA AGRO <b>NUSANTARA</b>
 </div></section>
 
 <div class="wrap benefits">
-<div><span>🌱</span><b>Bibit Unggul</b><small>Berkualitas</small></div>
-<div><span>🛡️</span><b>Bergaransi</b><small>Sesuai ketentuan</small></div>
-<div><span>🚚</span><b>Pengiriman</b><small>Seluruh Indonesia*</small></div>
-<div><span>🎧</span><b>Konsultasi</b><small>Hubungi admin</small></div>
+<div><span><img src="icon-bibit.png" alt=""></span><b>Bibit Unggul</b><small>Berkualitas</small></div>
+<div><span><img src="icon-garansi.png" alt=""></span><b>Bergaransi</b><small>Sesuai ketentuan</small></div>
+<div><span><img src="icon-pengiriman.png" alt=""></span><b>Pengiriman</b><small>Seluruh Indonesia*</small></div>
+<div><span><img src="icon-konsultasi.png" alt=""></span><b>Konsultasi</b><small>Hubungi admin</small></div>
 </div>
 
 <section class="content wrap" id="produk">
@@ -329,9 +343,8 @@ SAGARA AGRO <b>NUSANTARA</b>
 </section>
 
 <section class="about" id="tentang">
-<div class="placeholder">
-AREA FOTO KEBUN PEMBIBITAN<br>
-<small>Masukkan foto asli Sagara Agro</small>
+<div class="about-photo">
+<img src="foto-tentang.jpg" alt="Kebun pembibitan Sagara Agro" loading="lazy">
 </div>
 <div>
 <div class="eyebrow green">TENTANG KAMI</div>
@@ -360,9 +373,9 @@ AREA FOTO KEBUN PEMBIBITAN<br>
 <div>
 <h3>🌾 Pembelian Partai Besar</h3>
 <p>Konsultasikan varietas, jumlah, ukuran bibit, dan tujuan pengiriman untuk mendapatkan penawaran yang sesuai.</p>
-<a class="btn" href="https://wa.me/62816303131?text=Halo%20Sagara%20Agro%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20grosir.">Tanya Paket Grosir →</a>
+<a class="btn" href="https://wa.me/6281328119994?text=Halo%20Sagara%20Agro%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20grosir.">Tanya Paket Grosir →</a>
 </div>
-<div class="panelvisual">AREA FOTO KEBUN / BIBIT PARTAI BESAR</div>
+<div class="panelvisual"><img src="foto-grosir.jpg" alt="Bibit tanaman untuk pembelian grosir" loading="lazy"></div>
 </div>
 </section>
 
@@ -375,9 +388,9 @@ AREA FOTO KEBUN PEMBIBITAN<br>
 </div>
 </div>
 <div class="gallery">
-<div class="tile">FOTO KEBUN</div>
-<div class="tile">FOTO BIBIT</div>
-<div class="tile">FOTO PACKING</div>
+<div class="tile"><img src="galeri-kebun.jpg" alt="Dokumentasi kebun Sagara Agro" loading="lazy"></div>
+<div class="tile"><img src="galeri-bibit.jpg" alt="Dokumentasi bibit tanaman" loading="lazy"></div>
+<div class="tile"><img src="galeri-packing.jpg" alt="Proses pengemasan bibit" loading="lazy"></div>
 </div>
 <p class="note">Testimoni asli ditambahkan setelah materi dan izin publikasi tersedia.</p>
 </section>
@@ -388,11 +401,11 @@ AREA FOTO KEBUN PEMBIBITAN<br>
 <h2>Artikel & Edukasi</h2>
 <p>Konten perawatan dan budidaya akan ditambahkan di tahap berikutnya.</p>
 <div class="articlebox">
-<div class="articleicon">🌱</div>
+<div class="articleicon"><img src="icon-artikel.png" alt=""></div>
 <div>
 <h3>Tips Memilih Bibit Buah untuk Kebun Anda</h3>
 <p>Kenali varietas, kondisi bibit, dan kebutuhan lokasi tanam sebelum menentukan pilihan.</p>
-<a class="link" href="https://wa.me/62816303131">Konsultasi dengan admin →</a>
+<a class="link" href="https://wa.me/6281328119994">Konsultasi dengan admin →</a>
 </div>
 </div>
 </div>
@@ -404,7 +417,7 @@ AREA FOTO KEBUN PEMBIBITAN<br>
 <h2>Wujudkan Kebun Impian Anda Bersama Sagara Agro</h2>
 <p>Tanyakan stok, ukuran bibit, harga terbaru, dan pengiriman.</p>
 </div>
-<a class="btn light" href="https://wa.me/62816303131">Hubungi Kami Sekarang →</a>
+<a class="btn light" href="https://wa.me/6281328119994">Hubungi Kami Sekarang →</a>
 </section>
 
 </main>
@@ -445,17 +458,17 @@ SAGARA <b>AGRO</b>
 <p>Email: sagronusantara@gmail.com</p>
 <p>Alamat: Carikan, Ringinanom, Tempuran, Magelang, Jawa Tengah.</p>
 <p>Area Pembibitan: Krasak, Salaman, Magelang.</p>
-<a href="https://wa.me/62816303131">Hubungi Sagara Agro →</a>
+<a href="https://wa.me/6281328119994">Hubungi Sagara Agro →</a>
 </div>
 </div>
 
 <div class="copy">© <span id="year"></span> Sagara Agro. Seluruh hak cipta dilindungi.</div>
 </footer>
 
-<a class="wa" href="https://wa.me/62816303131" aria-label="WhatsApp">☏</a>
+<a class="wa" href="https://wa.me/6281328119994" aria-label="WhatsApp"><img src="icon-whatsapp.png" alt=""></a>
 
 <script>
-const nomorWA="62816303131";
+const nomorWA="6281328119994";
 
 const nav=document.querySelector('#nav');
 const menuButton=document.querySelector('#menubtn');
@@ -480,7 +493,7 @@ const products={
 musang:{
 name:"Durian Musang King",
 emoji:"🌳",
-image:"musang-king.jpg",
+image:"musang-king.jpeg",
 label:"BIBIT DURIAN MUSANG KING",
 intro:"Durian premium dengan perpaduan rasa manis legit yang kuat dan sedikit sentuhan pahit berkelas.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 3–4 tahun (terutama sistem kaki tiga).",
@@ -493,7 +506,7 @@ advantages:[
 bawor:{
 name:"Durian Bawor",
 emoji:"🌿",
-image:"bawor.jpg",
+image:"bawor.jpeg",
 label:"BIBIT DURIAN BAWOR",
 intro:"Durian unggulan dengan karakter buah jumbo, daging tebal, dan sistem akar ganda.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 2,5–3 tahun.",
@@ -506,7 +519,7 @@ advantages:[
 ochee:{
 name:"Durian Duri Hitam (Ochee)",
 emoji:"🍈",
-image:"ochee.jpg",
+image:"ochee.jpeg",
 label:"BIBIT DURI HITAM",
 intro:"Varietas durian dengan rasa manis legit, creamy, dan sensasi pahit khas di akhir.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 3–4 tahun.",
@@ -518,7 +531,7 @@ advantages:[
 montong:{
 name:"Durian Montong",
 emoji:"🌱",
-image:"montong.jpg",
+image:"montong.jpeg",
 label:"BIBIT DURIAN MONTONG",
 intro:"Durian berukuran jumbo dengan daging tebal, lembut, creamy, dan rasa dominan manis.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 4–5 tahun.",
@@ -530,7 +543,7 @@ advantages:[
 tembaga:{
 name:"Durian Super Tembaga",
 emoji:"🌳",
-image:"super-tembaga.jpg",
+image:"super-tembaga.jpeg",
 label:"BIBIT SUPER TEMBAGA",
 intro:"Durian dengan warna daging kuning oranye mencolok menyerupai tembaga dan potensi pasar premium.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 3–4 tahun.",
@@ -542,7 +555,7 @@ advantages:[
 masmuar:{
 name:"Durian Masmuar",
 emoji:"🌿",
-image:"masmuar.jpg",
+image:"masmuar.jpeg",
 label:"BIBIT DURIAN MASMUAR",
 intro:"Durian dengan rasa seimbang, sentuhan karamel, dan tekstur lembut lumer menyerupai mentega.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: 3–4 tahun.",
@@ -554,7 +567,7 @@ advantages:[
 cumasi:{
 name:"Durian Cumasi / Namlung",
 emoji:"🍈",
-image:"cumasi.jpg",
+image:"cumasi.jpeg",
 label:"BIBIT CUMASI / NAMLUNG",
 intro:"Durian khas dengan rasa manis legit, pahit kuat, sensasi hangat beralkohol, dan aroma sangat khas.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: Genjah / Cepat Berbuah.",
@@ -566,7 +579,7 @@ advantages:[
 tupai:{
 name:"Durian Tupai King",
 emoji:"🌳",
-image:"tupai-king.jpg",
+image:"tupai-king.jpeg",
 label:"BIBIT DURIAN TUPAI KING",
 intro:"Durian eksklusif bernilai kolektor dengan kompleksitas rasa premium dan tampilan black gold.",
 info:"Teknik: Okulasi. Tinggi bibit: 70 cm – 3 m. Estimasi berbuah: Produktif & Bernilai Kolektor.",
