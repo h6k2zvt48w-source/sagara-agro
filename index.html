@@ -72,7 +72,7 @@ section.content{padding:65px 0 25px}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .card{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 5px 18px #0000000a;background:white}
-.visual{height:160px;display:grid;place-content:center;text-align:center;color:white;font-size:42px;background:linear-gradient(135deg,#244d2b,#a7c66a);position:relative;overflow:hidden}
+.visual{height:160px;display:grid;place-content:center;text-align:center;color:white;font-size:42px;cursor:pointer;background:linear-gradient(135deg,#244d2b,#a7c66a);position:relative;overflow:hidden}
 .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .visual small{position:absolute;z-index:1;bottom:10px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:9px;letter-spacing:1px;background:#0b3b2477;padding:5px 9px;border-radius:12px;color:white}
 .v2{background:linear-gradient(135deg,#1c4b2a,#86a953)}
@@ -106,6 +106,15 @@ section.content{padding:65px 0 25px}
 .detail-wa{background:#159b4b}
 .detail-back{background:white;color:var(--d);border:1px solid var(--line)}
 .detail-disclaimer{font-size:11px;color:#7a857c;margin-top:20px;line-height:1.6}
+.related-products{margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.related-products h3{margin:0 0 14px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.related-item{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;text-align:left;cursor:pointer;padding:0;color:var(--d)}
+.related-item img{width:100%;height:90px;object-fit:cover;display:block}
+.related-item span{display:block;padding:9px;font-size:12px;font-weight:800}
+.related-item:hover{border-color:var(--g);box-shadow:0 4px 14px #00000012}
+@media(max-width:520px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+
 
 .about{margin-top:50px;padding:60px 4%;background:linear-gradient(120deg,var(--p),white);display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
 .placeholder{min-height:260px;border-radius:16px;background:linear-gradient(135deg,#234e2b,#a9c77a);display:grid;place-content:center;text-align:center;color:white;font-weight:800;padding:20px}
@@ -191,7 +200,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <a href="#artikel">Artikel</a>
 <a href="#tentang">Tentang</a>
 </nav>
-<a class="btn headerbtn" href="https://wa.me/6281328119994">☏ Hubungi Kami</a>
+<a class="btn headerbtn" href="https://wa.me/62816303131">☏ Hubungi Kami</a>
 </header>
 
 <main>
@@ -200,10 +209,10 @@ SAGARA AGRO <b>NUSANTARA</b>
 <div>
 <div class="eyebrow">SAHABAT KEBUN BUAH ANDA</div>
 <h1>Pusat Penyedia<br>Bibit Tanaman <em>Buah Unggul</em></h1>
-<h2>Berkualitas dan Bergaransi</h2>
+<h2>Growing Nature Creating Value</h2>
 <p>Solusi bibit buah unggul untuk kebun impian Anda. Konsultasikan varietas, ukuran bibit, dan pengiriman bersama tim Sagara Agro.</p>
 <div class="actions">
-<a class="btn" href="https://wa.me/6281328119994">☏ Konsultasi Sekarang</a>
+<a class="btn" href="https://wa.me/62816303131">☏ Konsultasi Sekarang</a>
 <a class="btn ghost" href="#produk">Lihat Produk →</a>
 </div>
 </div>
@@ -337,6 +346,10 @@ SAGARA AGRO <b>NUSANTARA</b>
 <button class="btn detail-back" id="backCatalog2">← Kembali ke Produk</button>
 </div>
 <p class="detail-disclaimer">Estimasi waktu berbuah merupakan perkiraan dan dapat dipengaruhi kondisi bibit, lingkungan, serta perawatan tanaman. Tanyakan stok dan spesifikasi bibit aktual kepada admin.</p>
+<div class="related-products">
+<h3>Produk Bibit Lainnya</h3>
+<div class="related-grid" id="relatedProducts"></div>
+</div>
 </div>
 </div>
 </div>
@@ -373,7 +386,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <div>
 <h3>🌾 Pembelian Partai Besar</h3>
 <p>Konsultasikan varietas, jumlah, ukuran bibit, dan tujuan pengiriman untuk mendapatkan penawaran yang sesuai.</p>
-<a class="btn" href="https://wa.me/6281328119994?text=Halo%20Sagara%20Agro%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20grosir.">Tanya Paket Grosir →</a>
+<a class="btn" href="https://wa.me/62816303131?text=Halo%20Sagara%20Agro%2C%20saya%20ingin%20bertanya%20tentang%20pembelian%20grosir.">Tanya Paket Grosir →</a>
 </div>
 <div class="panelvisual"><img src="foto-grosir.jpg" alt="Bibit tanaman untuk pembelian grosir" loading="lazy"></div>
 </div>
@@ -405,7 +418,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <div>
 <h3>Tips Memilih Bibit Buah untuk Kebun Anda</h3>
 <p>Kenali varietas, kondisi bibit, dan kebutuhan lokasi tanam sebelum menentukan pilihan.</p>
-<a class="link" href="https://wa.me/6281328119994">Konsultasi dengan admin →</a>
+<a class="link" href="https://wa.me/62816303131">Konsultasi dengan admin →</a>
 </div>
 </div>
 </div>
@@ -417,7 +430,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <h2>Wujudkan Kebun Impian Anda Bersama Sagara Agro</h2>
 <p>Tanyakan stok, ukuran bibit, harga terbaru, dan pengiriman.</p>
 </div>
-<a class="btn light" href="https://wa.me/6281328119994">Hubungi Kami Sekarang →</a>
+<a class="btn light" href="https://wa.me/62816303131">Hubungi Kami Sekarang →</a>
 </section>
 
 </main>
@@ -454,21 +467,21 @@ SAGARA <b>AGRO</b>
 
 <div>
 <h4>Kontak & Lokasi</h4>
-<p>WhatsApp: 0813-2811-9994</p>
+<p>WhatsApp: +62 816-303-131</p>
 <p>Email: sagronusantara@gmail.com</p>
 <p>Alamat: Carikan, Ringinanom, Tempuran, Magelang, Jawa Tengah.</p>
 <p>Area Pembibitan: Krasak, Salaman, Magelang.</p>
-<a href="https://wa.me/6281328119994">Hubungi Sagara Agro →</a>
+<a href="https://wa.me/62816303131">Hubungi Sagara Agro →</a>
 </div>
 </div>
 
 <div class="copy">© <span id="year"></span> Sagara Agro. Seluruh hak cipta dilindungi.</div>
 </footer>
 
-<a class="wa" href="https://wa.me/6281328119994" aria-label="WhatsApp"><img src="icon-whatsapp.png" alt=""></a>
+<a class="wa" href="https://wa.me/62816303131" aria-label="WhatsApp">☏</a>
 
 <script>
-const nomorWA="6281328119994";
+const nomorWA="62816303131";
 
 const nav=document.querySelector('#nav');
 const menuButton=document.querySelector('#menubtn');
@@ -592,54 +605,105 @@ advantages:[
 
 // BUKA HALAMAN DETAIL
 function openProduct(productId){
-const product=products[productId];
-if(!product)return;
+ const product=products[productId];
+ if(!product)return;
+ document.getElementById('detailVisual').innerHTML='<img src="'+product.image+'" alt="'+product.name+'"><small>'+product.label+'</small>';
+ document.getElementById('detailTitle').textContent=product.name;
+ document.getElementById('detailIntro').textContent=product.intro;
+ document.getElementById('detailInfo').textContent=product.info;
+ const advantages=document.getElementById('detailAdvantages');
+ advantages.innerHTML='';
+ product.advantages.forEach(item=>{
+  const li=document.createElement('li');
+  li.textContent=item;
+  advantages.appendChild(li);
+ });
+ const message='Halo Sagara Agro, saya tertarik dengan '+product.name+'. Mohon informasi stok, ukuran bibit, harga terbaru, dan pengiriman.';
+ document.getElementById('detailWhatsApp').href='https://wa.me/'+nomorWA+'?text='+encodeURIComponent(message);
 
-document.getElementById('detailVisual').innerHTML=
-'<img src="'+product.image+'" alt="'+product.name+'"><small>'+product.label+'</small>';
+ const related=document.getElementById('relatedProducts');
+ related.innerHTML='';
+ Object.keys(products).filter(id=>id!==productId).slice(0,3).forEach(id=>{
+  const item=products[id];
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='related-item';
+  button.innerHTML='<img src="'+item.image+'" alt="'+item.name+'"><span>'+item.name+' →</span>';
+  button.addEventListener('click',()=>openProduct(id));
+  related.appendChild(button);
+ });
 
-document.getElementById('detailTitle').textContent=product.name;
-document.getElementById('detailIntro').textContent=product.intro;
-document.getElementById('detailInfo').textContent=product.info;
-
-const advantages=document.getElementById('detailAdvantages');
-advantages.innerHTML='';
-
-product.advantages.forEach(item=>{
-const li=document.createElement('li');
-li.textContent=item;
-advantages.appendChild(li);
-});
-
-const message='Halo Sagara Agro, saya tertarik dengan '+product.name+'. Mohon informasi stok, ukuran bibit, harga terbaru, dan pengiriman.';
-
-document.getElementById('detailWhatsApp').href=
-'https://wa.me/'+nomorWA+'?text='+encodeURIComponent(message);
-
-document.getElementById('produk').style.display='none';
-document.getElementById('detail').style.display='block';
-window.location.hash='detail';
-document.getElementById('detail').scrollIntoView({behavior:'smooth'});
+ document.getElementById('produk').style.display='none';
+ document.getElementById('detail').style.display='block';
+ history.pushState({page:'detail',productId},'', '#detail');
+ window.scrollTo({top:document.getElementById('detail').offsetTop-70,behavior:'smooth'});
 }
-
-// TOMBOL LIHAT DETAIL
-document.querySelectorAll('.detail-trigger').forEach(button=>{
-button.addEventListener('click',event=>{
-event.preventDefault();
-openProduct(button.dataset.product);
-});
-});
 
 // KEMBALI KE KATALOG
 function backToCatalog(){
-document.getElementById('detail').style.display='none';
-document.getElementById('produk').style.display='block';
-window.location.hash='produk';
-document.getElementById('produk').scrollIntoView({behavior:'smooth'});
+ document.getElementById('detail').style.display='none';
+ document.getElementById('produk').style.display='block';
+ history.pushState({page:'catalog'},'', '#produk');
+ document.getElementById('produk').scrollIntoView({behavior:'smooth'});
 }
 
+// Menu navigasi tetap berfungsi ketika pengunjung sedang membuka detail.
+function closeDetailForNavigation(){
+ if(document.getElementById('detail').style.display==='block'){
+  document.getElementById('detail').style.display='none';
+  document.getElementById('produk').style.display='block';
+ }
+}
+document.querySelectorAll('header .brand, #nav a, footer a[href^="#"]').forEach(link=>{
+ link.addEventListener('click',()=>{
+  closeDetailForNavigation();
+  const target=link.getAttribute('href');
+  if(target && target.startsWith('#')){
+   setTimeout(()=>{
+    const section=document.querySelector(target);
+    if(section)section.scrollIntoView({behavior:'smooth'});
+   },0);
+  }
+ });
+});
+
+document.querySelectorAll('.detail-trigger').forEach(button=>{
+ button.addEventListener('click',event=>{
+  event.preventDefault();
+  openProduct(button.dataset.product);
+ });
+});
+
+// Klik foto produk juga membuka halaman detail produk terkait.
+document.querySelectorAll('.card').forEach(card=>{
+ const visual=card.querySelector('.visual');
+ const trigger=card.querySelector('.detail-trigger');
+ if(visual && trigger){
+  visual.setAttribute('role','button');
+  visual.setAttribute('tabindex','0');
+  visual.setAttribute('aria-label','Lihat detail '+trigger.dataset.product);
+  visual.addEventListener('click',()=>openProduct(trigger.dataset.product));
+  visual.addEventListener('keydown',event=>{
+   if(event.key==='Enter' || event.key===' '){
+    event.preventDefault();
+    openProduct(trigger.dataset.product);
+   }
+  });
+ }
+});
 document.getElementById('backCatalog').addEventListener('click',backToCatalog);
 document.getElementById('backCatalog2').addEventListener('click',backToCatalog);
+
+window.addEventListener('popstate',()=>{
+ const hash=window.location.hash;
+ if(hash==='#detail')return;
+ if(document.getElementById('detail').style.display==='block'){
+  document.getElementById('detail').style.display='none';
+  document.getElementById('produk').style.display='block';
+ }
+ if(hash==='#produk')document.getElementById('produk').scrollIntoView({behavior:'smooth'});
+ else if(hash==='#home' || hash==='')window.scrollTo({top:0,behavior:'smooth'});
+});
 document.getElementById('year').textContent=new Date().getFullYear();
 
 </script>
