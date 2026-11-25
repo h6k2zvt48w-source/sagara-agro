@@ -181,6 +181,32 @@ nav.open{display:flex}
 .detail-content h2{font-size:23px}
 .detail-visual{min-height:180px}
 }
+
+/* Penyempurnaan fitur katalog dan pengalaman pengguna */
+.search-wrap{margin:0 0 14px;position:relative;max-width:460px}
+.search-wrap input{width:100%;padding:13px 16px 13px 42px;border:1px solid var(--line);border-radius:28px;font:500 13px "DM Sans",Arial,sans-serif;outline:none;background:#fff;color:var(--ink)}
+.search-wrap input:focus{border-color:var(--g);box-shadow:0 0 0 3px #187a2d16}
+.search-wrap:before{content:"⌕";position:absolute;left:16px;top:7px;font-size:23px;color:var(--mut)}
+.no-results{display:none;padding:25px;text-align:center;background:var(--p);border-radius:12px;color:var(--mut);font-size:13px}
+.detail-category-nav{margin-bottom:22px;padding:16px 18px;background:white;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 15px #00000008}
+.detail-category-nav p{margin:0 0 12px;font-size:12px;font-weight:800;color:var(--d)}
+.detail-filters{margin:0;flex-wrap:wrap}
+.detail-filters button{transition:.2s ease}
+.detail-filters button:hover{border-color:var(--g);color:var(--g)}
+.detail-filters button.active{background:var(--g);color:white}
+.detail-visual{cursor:zoom-in}
+.back-top{position:fixed;right:20px;bottom:80px;width:42px;height:42px;border:0;border-radius:50%;background:white;color:var(--d);box-shadow:0 4px 18px #0002;font-size:20px;font-weight:800;cursor:pointer;z-index:8;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.faq-list{display:grid;gap:10px;max-width:900px}
+.faq-list details{background:white;border:1px solid var(--line);border-radius:12px;padding:15px 18px}
+.faq-list summary{font-weight:800;font-size:13px;color:var(--d);cursor:pointer}
+.faq-list details p{font-size:13px;line-height:1.7;color:var(--mut);margin:12px 0 0}
+.zoom-modal{display:none;position:fixed;inset:0;background:#061b10eF;z-index:30;align-items:center;justify-content:center;padding:24px}
+.zoom-modal.open{display:flex}
+.zoom-modal img{max-width:min(100%,1000px);max-height:85vh;object-fit:contain;border-radius:12px;box-shadow:0 15px 50px #0005}
+.zoom-close{position:absolute;top:18px;right:22px;border:0;background:#ffffff20;color:white;border-radius:50%;width:42px;height:42px;font-size:25px;cursor:pointer}
+@media(max-width:520px){.search-wrap{max-width:none}.detail-category-nav{padding:13px}.back-top{right:16px;bottom:76px}}
+
 </style>
 </head>
 
@@ -209,7 +235,7 @@ SAGARA AGRO <b>NUSANTARA</b>
 <div>
 <div class="eyebrow">SAHABAT KEBUN BUAH ANDA</div>
 <h1>Pusat Penyedia<br>Bibit Tanaman <em>Buah Unggul</em></h1>
-<h2>Growing Nature Creating Value</h2>
+<h2>Berkualitas dan Bergaransi</h2>
 <p>Solusi bibit buah unggul untuk kebun impian Anda. Konsultasikan varietas, ukuran bibit, dan pengiriman bersama tim Sagara Agro.</p>
 <div class="actions">
 <a class="btn" href="https://wa.me/62816303131">☏ Konsultasi Sekarang</a>
@@ -236,6 +262,9 @@ SAGARA AGRO <b>NUSANTARA</b>
 </div>
 </div>
 
+<div class="search-wrap">
+<input type="search" id="productSearch" placeholder="Cari nama bibit, misalnya Musang King..." aria-label="Cari produk bibit">
+</div>
 <div class="filters">
 <button class="active" data-filter="all">Semua</button>
 <button data-filter="durian">Durian</button>
@@ -324,12 +353,19 @@ SAGARA AGRO <b>NUSANTARA</b>
 </article>
 
 </div>
+<div class="no-results" id="noResults">Produk yang dicari belum ditemukan. Coba kata kunci lain.</div>
 <p class="note">Harga, stok, dan pilihan tinggi bibit dapat berubah. Konfirmasi kepada admin sebelum memesan.</p>
 </section>
 
 <section class="detail-page" id="detail">
 <div class="detail-inner">
-<button class="back-btn" id="backCatalog">← Kembali ke Katalog</button>
+<div class="detail-category-nav">
+<p>Jelajahi Kategori Bibit</p>
+<div class="filters detail-filters">
+<button class="active" data-filter="all">Semua</button>
+<button data-filter="durian">Durian</button>
+</div>
+</div>
 <div class="detail-box">
 <div class="detail-visual" id="detailVisual">🌳</div>
 <div class="detail-content">
@@ -424,6 +460,34 @@ SAGARA AGRO <b>NUSANTARA</b>
 </div>
 </section>
 
+<section class="content wrap" id="faq">
+<div class="head">
+<div>
+<div class="eyebrow green">BANTUAN & INFORMASI</div>
+<h2>Pertanyaan yang Sering Diajukan</h2>
+<p>Informasi singkat sebelum Anda memilih bibit.</p>
+</div>
+</div>
+<div class="faq-list">
+<details>
+<summary>Bagaimana cara mengetahui harga dan stok bibit?</summary>
+<p>Harga dan ketersediaan dapat berubah. Hubungi admin Sagara Agro melalui WhatsApp untuk mendapatkan informasi stok, ukuran bibit, dan harga terbaru.</p>
+</details>
+<details>
+<summary>Apakah Sagara Agro melayani pengiriman ke luar daerah?</summary>
+<p>Sagara Agro melayani pengiriman ke seluruh Indonesia. Silakan konsultasikan lokasi tujuan dan kebutuhan pengiriman kepada admin.</p>
+</details>
+<details>
+<summary>Bagaimana cara memesan bibit?</summary>
+<p>Pilih varietas yang diminati, buka halaman detail produk, lalu tekan tombol Pesan via WhatsApp untuk menghubungi admin.</p>
+</details>
+<details>
+<summary>Apakah bibit memiliki garansi?</summary>
+<p>Sagara Agro menyediakan garansi sesuai ketentuan. Silakan tanyakan ketentuan garansi yang berlaku kepada admin sebelum melakukan pemesanan.</p>
+</details>
+</div>
+</section>
+
 <section class="cta">
 <div>
 <div class="eyebrow">MULAI RENCANA KEBUN ANDA</div>
@@ -461,6 +525,7 @@ SAGARA <b>AGRO</b>
 <div>
 <h4>Informasi</h4>
 <a href="#artikel">Artikel</a>
+<a href="#faq">FAQ</a>
 <a href="#tentang">Tentang Kami</a>
 <a href="#galeri">Galeri</a>
 </div>
@@ -478,6 +543,11 @@ SAGARA <b>AGRO</b>
 <div class="copy">© <span id="year"></span> Sagara Agro. Seluruh hak cipta dilindungi.</div>
 </footer>
 
+<button class="back-top" id="backTop" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+<div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Perbesar foto produk">
+<button class="zoom-close" id="zoomClose" aria-label="Tutup foto">×</button>
+<img id="zoomImage" src="" alt="Foto produk diperbesar">
+</div>
 <a class="wa" href="https://wa.me/62816303131" aria-label="WhatsApp">☏</a>
 
 <script>
@@ -489,16 +559,32 @@ const menuButton=document.querySelector('#menubtn');
 menuButton.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 
-// FILTER KATALOG
-document.querySelectorAll('.filters button').forEach(button=>{
-button.addEventListener('click',()=>{
-document.querySelectorAll('.filters button').forEach(item=>item.classList.remove('active'));
-button.classList.add('active');
-document.querySelectorAll('.card').forEach(card=>{
-card.hidden=button.dataset.filter!=='all'&&card.dataset.cat!==button.dataset.filter;
+// FILTER DAN PENCARIAN KATALOG
+let activeCatalogFilter='all';
+const productSearch=document.getElementById('productSearch');
+
+function applyCatalogFilter(filter){
+ activeCatalogFilter=filter;
+ document.querySelectorAll('.filters button').forEach(button=>{
+  button.classList.toggle('active',button.dataset.filter===filter);
+ });
+ const keyword=(productSearch?.value || '').trim().toLowerCase();
+ let visibleCount=0;
+ document.querySelectorAll('.card').forEach(card=>{
+  const matchesCategory=filter==='all' || card.dataset.cat===filter;
+  const matchesSearch=!keyword || card.textContent.toLowerCase().includes(keyword);
+  const visible=matchesCategory && matchesSearch;
+  card.hidden=!visible;
+  if(visible)visibleCount++;
+ });
+ const noResults=document.getElementById('noResults');
+ if(noResults)noResults.style.display=visibleCount?'none':'block';
+}
+
+document.querySelectorAll('#produk .filters button').forEach(button=>{
+ button.addEventListener('click',()=>applyCatalogFilter(button.dataset.filter));
 });
-});
-});
+productSearch?.addEventListener('input',()=>applyCatalogFilter(activeCatalogFilter));
 
 // DATA 8 PRODUK DURIAN SAGARA AGRO
 const products={
@@ -647,6 +733,14 @@ function backToCatalog(){
  document.getElementById('produk').scrollIntoView({behavior:'smooth'});
 }
 
+// Pilihan kategori di halaman detail langsung membawa pengunjung ke katalog.
+document.querySelectorAll('.detail-filters button').forEach(button=>{
+ button.addEventListener('click',()=>{
+  applyCatalogFilter(button.dataset.filter);
+  backToCatalog();
+ });
+});
+
 // Menu navigasi tetap berfungsi ketika pengunjung sedang membuka detail.
 function closeDetailForNavigation(){
  if(document.getElementById('detail').style.display==='block'){
@@ -691,7 +785,6 @@ document.querySelectorAll('.card').forEach(card=>{
   });
  }
 });
-document.getElementById('backCatalog').addEventListener('click',backToCatalog);
 document.getElementById('backCatalog2').addEventListener('click',backToCatalog);
 
 window.addEventListener('popstate',()=>{
@@ -704,6 +797,38 @@ window.addEventListener('popstate',()=>{
  if(hash==='#produk')document.getElementById('produk').scrollIntoView({behavior:'smooth'});
  else if(hash==='#home' || hash==='')window.scrollTo({top:0,behavior:'smooth'});
 });
+// Perbesar foto pada halaman detail tanpa mengubah aksi klik foto katalog.
+const zoomModal=document.getElementById('zoomModal');
+const zoomImage=document.getElementById('zoomImage');
+const detailVisual=document.getElementById('detailVisual');
+
+function closeZoom(){
+ zoomModal.classList.remove('open');
+ zoomImage.src='';
+}
+detailVisual.addEventListener('click',()=>{
+ const image=detailVisual.querySelector('img');
+ if(image){
+  zoomImage.src=image.src;
+  zoomImage.alt=image.alt || 'Foto bibit Sagara Agro';
+  zoomModal.classList.add('open');
+ }
+});
+document.getElementById('zoomClose').addEventListener('click',closeZoom);
+zoomModal.addEventListener('click',event=>{
+ if(event.target===zoomModal)closeZoom();
+});
+document.addEventListener('keydown',event=>{
+ if(event.key==='Escape')closeZoom();
+});
+
+// Tombol kembali ke atas muncul setelah halaman digulir.
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+ backTop.classList.toggle('show',window.scrollY>350);
+},{passive:true});
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
 document.getElementById('year').textContent=new Date().getFullYear();
 
 </script>
